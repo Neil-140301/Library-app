@@ -12,11 +12,13 @@
   </head>
   <body>
     <div class="library-app-container">
-      <h1 class="library-heading mb-3">Library</h1>
-      <div class="button-container">
-        <button class="button" type="button" id="addBook" onclick="addBook()" data-toggle="modal" data-target="#addBookDetails">
+      <h1 class="library-heading mb-4">My Library</h1>
+      <div class="button-container mb-4">
+        <button class="button" type="button" id="addBook" data-toggle="modal" data-target="#addBookDetails">
           Add Book
         </button>
+      </div>
+      <div id="booksContainer" class="books-container">
       </div>
     </div>
 
@@ -31,13 +33,13 @@
             </div>
             <form id="addBookForm" class="add-books-form">
               <div class="mb-3">
-                <input type="text" placeholder="Title" class="form-control form-input">
+                <input id="titleInput" type="text" placeholder="Title" class="form-control form-input">
               </div>
               <div class="mb-3">
-                <input type="text" placeholder="Author" class="form-control form-input">
+                <input id="authorInput" type="text" placeholder="Author" class="form-control form-input">
               </div>
               <div class="mb-3">
-                <input type="number" placeholder="Pages" class="form-control form-input">
+                <input id="pagesInput" type="number" placeholder="Pages" class="form-control form-input">
               </div>
               <div class="mb-2">
                 <input type="checkbox" id="readBook">
