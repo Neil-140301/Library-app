@@ -14,9 +14,45 @@
     <div class="library-app-container">
       <h1 class="library-heading mb-3">Library</h1>
       <div class="button-container">
-        <button class="button" type="button" id="addBook" onclick="addBook()">Add Book</button>
+        <button class="button" type="button" id="addBook" onclick="addBook()" data-toggle="modal" data-target="#addBookDetails">
+          Add Book
+        </button>
       </div>
     </div>
+
+
+    <div class="modal fade" id="addBookDetails" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body add-books-form-container">
+            <div class="heading-container">
+              <h1 class="form-heading">Add Book Details</h1>
+              <hr class="form-hr">
+            </div>
+            <form id="addBookForm" class="add-books-form">
+              <div class="mb-3">
+                <input type="text" placeholder="Title" class="form-control form-input">
+              </div>
+              <div class="mb-3">
+                <input type="text" placeholder="Author" class="form-control form-input">
+              </div>
+              <div class="mb-3">
+                <input type="number" placeholder="Pages" class="form-control form-input">
+              </div>
+              <div class="mb-2">
+                <input type="checkbox" id="readBook">
+                <label for="readBook">Read the Book</label>                
+              </div>
+              <div>
+                <button type="submit" class="btn bg-dark text-white ml-auto d-block">Add</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
 
     <script src="./index.js"></script>
   </body>

@@ -4,6 +4,7 @@ function addBook() {
   console.log(addBookBtn);
 }
 
+//constructor function
 function Book(title,author,pages,read = false) {
   this.title = title;
   this.author = author;
