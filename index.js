@@ -85,12 +85,27 @@ function createAndAppendBook(bookObj){
   let readBookEl = document.createElement('p');
   readBookEl.textContent = "Read the Book : ";
   bookCard.appendChild(readBookEl);
-
-  let readStatusEl = document.createElement('button');
-  readStatusEl.classList.add('read-book',`${hasRead}`);
-  readStatusEl.textContent = hasRead? 'Y' : 'N';
-  readBookEl.appendChild(readStatusEl);
-
+//
+  let TrueStatusEl = document.createElement('button');
+  TrueStatusEl.classList.add('read-book','true','d-none');
+  TrueStatusEl.textContent = 'Y' ;
+  TrueStatusEl.onclick = function() {
+    TrueStatusEl.classList.toggle('d-none');
+    falseStatusEl.classList.toggle('d-none');
+  };
+  readBookEl.appendChild(TrueStatusEl);
+  
+  let falseStatusEl = document.createElement('button');
+  falseStatusEl.classList.add('read-book','false','d-none');
+  falseStatusEl.textContent = 'N';
+  falseStatusEl.onclick = function() {
+    TrueStatusEl.classList.toggle('d-none');
+    falseStatusEl.classList.toggle('d-none');
+  };
+  readBookEl.appendChild(falseStatusEl);
+  
+  hasRead? TrueStatusEl.classList.toggle('d-none'): falseStatusEl.classList.toggle('d-none');
+//
   let deleteEl = document.createElement('button');
   deleteEl.classList.add('delete-book');
   bookCard.appendChild(deleteEl);
